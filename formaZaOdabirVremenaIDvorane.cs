@@ -29,7 +29,8 @@ namespace Kolokviji
         public formaZaOdabirVremenaIDvorane(int visi_pristup)
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\Database1.mdf;Integrated Security=True";
             vrstaKorisnika = visi_pristup;
         }
         #endregion
@@ -246,5 +247,10 @@ namespace Kolokviji
             form2.Show();
         }
         #endregion
+
+        private void listaVremenaBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

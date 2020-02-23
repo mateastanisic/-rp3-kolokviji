@@ -38,7 +38,8 @@ namespace Kolokviji
         public formaZaPrikazRaporeda(string dvorana, int vrijeme, int visi_pristup)
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\Database1.mdf;Integrated Security=True";
 
             // Postavljamo oznaku dvorane za pretrazivanje baze i stavljanje naslova na formu
             trazenaDvorana = dvorana;
@@ -499,11 +500,15 @@ namespace Kolokviji
             b2.AccessibleDescription = aDesc;
             b2.BackColor = myColor;
 
-            /*
+            
             // Zamjeni u bazi
             string pozicija1 = b2.Name.Replace("pozicija_", String.Empty);
             string pozicija2 = b1.Name.Replace("pozicija_", String.Empty);
 
+            UpdateBaze(pozicija1, jmbag1);
+            UpdateBaze(pozicija2, jmbag2);
+
+            /*
             // Mjenjamo podatke o smještaju studenta u bazi
             string query1 = "UPDATE Studenti SET BrojDvorane ='" + trazenaDvorana.Replace(" ", String.Empty) + "', MjestoUDvorani = '" + pozicija1 + "' WHERE JMBAG = " + jmbag1;
             string query2 = "UPDATE Studenti SET BrojDvorane ='" + trazenaDvorana.Replace(" ", String.Empty) + "', MjestoUDvorani = '" + pozicija2 + "' WHERE JMBAG = " + jmbag2;

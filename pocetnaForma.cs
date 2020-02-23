@@ -23,7 +23,8 @@ namespace Kolokviji
         public pocetnaForma()
         {
             InitializeComponent();
-            connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            //connectionString = ConfigurationManager.ConnectionStrings["Kolokviji.Properties.Settings.Database1ConnectionString"].ConnectionString;
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\Database1.mdf;Integrated Security=True";
         }
         #endregion
 
