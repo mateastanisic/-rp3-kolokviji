@@ -399,6 +399,8 @@ namespace Kolokviji
                     ctrl.BackColor = rjecnikBojaZaKolegije[kolegij];
                     ctrl.AccessibleName = imePrezime + "_" + jmbag ;
                     ctrl.AccessibleDescription = kolegij;
+
+                    UpdateBaze(pozicija, jmbag/*, imePrezime, kolegij*/);
                     return;
                 }
             }
@@ -417,6 +419,8 @@ namespace Kolokviji
             matricaGumba[i][j].AccessibleName = imePrezime + "_" + jmbag;
             matricaGumba[i][j].AccessibleDescription = kolegij;
             matricaGumba[i][j].BackColor = rjecnikBojaZaKolegije[kolegij];
+
+            UpdateBaze(i.ToString() + "*" + j.ToString(), jmbag/*, imePrezime, kolegij*/);
         }
         #endregion
 
@@ -533,6 +537,102 @@ namespace Kolokviji
 
         }
         #endregion
+
+        #region Update baze
+
+        private void UpdateBaze(string pozicija, string jmbag/*, string imePrezime, string kolegij*/)
+        {
+            //Update
+            /*using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(
+                    "SELECT JMBAG, BrojDvorane, MjestoUDvorani FROM Studenti", connection);
+
+                dataAdapter.UpdateCommand = new SqlCommand(
+                "UPDATE Studenti SET BrojDvorane = @BrojDvorane, MjestoUDvorani = @MjestoUdvorani " +
+                "WHERE JMBAG = @JMBAG", connection);
+
+                dataAdapter.UpdateCommand.Parameters.Add("@BrojDvorane", SqlDbType.Char, 10, "BrojDvorane");
+                dataAdapter.UpdateCommand.Parameters.Add(
+                    "@MjestoUDvorani", SqlDbType.Char, 10, "MjestoUDvorani");
+
+                SqlParameter parameter = dataAdapter.UpdateCommand.Parameters.Add("@JMBAG", SqlDbType.Int);
+                parameter.SourceColumn = "JMBAG";
+                parameter.SourceVersion = DataRowVersion.Original;
+                parameter.Value = Convert.ToInt32(jmbag);
+
+                dataAdapter.UpdateCommand.ExecuteNonQuery();
+
+                DataTable categoryTable = new DataTable();
+                dataAdapter.Fill(categoryTable);
+
+                DataRow categoryRow = categoryTable.Rows[0];
+                categoryRow["BrojDvorane"] = trazenaDvorana;
+                categoryRow["MjestoUDvorani"] = pozicija;
+
+                dataAdapter.Update(categoryTable);
+                connection.Close();
+            }*/
+
+            //Update malo drukcije
+            SqlConnection cnn = new SqlConnection(connectionString);
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "";
+
+            sql = "UPDATE Studenti SET BrojDvorane=@BrojDvorane, MjestoUDvorani=@MjestoUDvorani WHERE JMBAG=@JMBAG";
+
+
+            cnn.Open();
+            command = new SqlCommand(sql, cnn);
+            //adapter.UpdateCommand = new SqlCommand(sql, cnn);
+            adapter.UpdateCommand = command;
+            adapter.UpdateCommand.Parameters.Add("@BrojDvorane", trazenaDvorana);
+            adapter.UpdateCommand.Parameters.Add("@MjestoUDvorani", pozicija);
+            adapter.UpdateCommand.Parameters.Add("@JMBAG", jmbag);
+            adapter.UpdateCommand.ExecuteNonQuery();
+
+            adapter.UpdateCommand.Dispose();
+            cnn.Close();
+
+            //Delete i Insert
+
+            /*SqlConnection cnn = new SqlConnection(connectionString);
+            cnn.Open();
+            SqlCommand command;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql = "";
+
+            sql = "DELETE Studenti WHERE JMBAG=" + jmbag;
+
+            command = new SqlCommand(sql, cnn);
+
+            adapter.DeleteCommand = new SqlCommand(sql, cnn);
+            adapter.DeleteCommand.ExecuteNonQuery();
+
+            DataTable categoryTable = new DataTable();
+            adapter.Fill(categoryTable);
+
+            command.Dispose();
+            cnn.Close();*/
+            /*cnn.Open();
+
+            sql = "INSERT INTO Studenti (JMBAG, Ime_Prezime, Kolegij, Vrijeme, BrojDvorane, MjestoUDvorani)" +
+                " VALUES (" + jmbag + "," + imePrezime + "," + kolegij + "," +
+                trazenaDvorana.Replace(" ", String.Empty) + "," + pozicija + ")";
+
+            command = new SqlCommand(sql, cnn);
+
+            adapter.InsertCommand = new SqlCommand(sql, cnn);
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            command.Dispose();
+            cnn.Close();*/
+        }
+        #endregion
+
+        
 
         #region Povratak na prethodnu formu
         private void vratiSeNaFormuZaODabirVremenaIDvoraneGumb_Click(object sender, EventArgs e)

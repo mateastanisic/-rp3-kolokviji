@@ -1,0 +1,13 @@
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\bin\Debug\Database1.mdf
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\bin\Debug\Database1_log.ldf
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\bin\Debug\Kolokviji.exe.config
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\bin\Debug\Kolokviji.exe
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\bin\Debug\Kolokviji.pdb
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.csprojAssemblyReference.cache
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.formaZaOdabirVremenaIDvorane.resources
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.pocetnaForma.resources
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.formaZaPrikazRaporeda.resources
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.Properties.Resources.resources
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.csproj.GenerateResource.cache
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.exe
+C:\Lucija\PMF\5.godina\RP3\Projekt4\-rp3-kolokviji\obj\Debug\Kolokviji.pdb
