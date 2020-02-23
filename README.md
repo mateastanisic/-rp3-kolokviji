@@ -1,1 +1,4 @@
 # -rp3-kolokviji
+
+Kolokviji (Maja Piskač, Lucija Puškarić, Matea Stanišić) 
+- napravite aplikaciju za kreiranje razmještaja studenata po predavaonicama u vrijeme pisanja kolokvija (na našem odsjeku). Aplikacija je povezana s bazom u kojoj se nalaze imena studenata te kolegij iz kojeg pišu kolokvij i u koliko sati, raspoloživost dvorana u zadanom terminu i njihove karakteristike. Program bi trebao razmjestiti studente tako da studenti koji pišu kolokvij iz istog kolegija ne sjede jedan do drugog i da, ako je ikako moguće, između dva studenta postoji barem jedno mjesto razmaka. Aplikacija mora dozvoliti grafički pregled razmještaja studenata po predavaonicama (zauzete stolice neka bude obojene različitim bojama ovisno o kolegiju, a za svako mjesto je moguće dobiti osnovne podatke o studentu). Korisnik aplikacije s višom razinom pristupa može ručno zamijeniti mjesto dva studenta.
